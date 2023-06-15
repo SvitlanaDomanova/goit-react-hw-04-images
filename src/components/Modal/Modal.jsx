@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import css from './Modal.module.css';
@@ -30,5 +31,9 @@ function Modal({ onClose, largeImageURL, tags }) {
     modalRoot
   );
 }
-
+Modal.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 export default Modal;

@@ -1,6 +1,4 @@
-
- 
-
+import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 import { useState } from 'react';
 import Modal from '../Modal/Modal';
@@ -26,5 +24,10 @@ function ImageGalleryItem({ image, tags, largeImageURL }) {
     </>
   );
 }
-
+ImageGalleryItem.propTypes = {
+  image: PropTypes.shape({
+    tags: PropTypes.string.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default ImageGalleryItem;
